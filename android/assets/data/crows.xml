@@ -1,0 +1,24 @@
+<persons>
+<CAPTAIN>
+    <name>Tado</name>
+    <age>44</age>
+    <height>176</height>
+    <gender>M</gender>
+    <fel>3</fel>
+    <fet>MECHANIKS</fet>
+    <sel>1</sel>
+    <set>NAVIGATE</set>
+    <pay>100</pay>
+</CAPTAIN>
+    <NAVIGATOR>
+        <name>Wyzygota</name>
+        <age>36</age>
+        <height>176</height>
+        <gender>M</gender>
+        <fel>2</fel>
+        <fet>NEGOTIATIONS</fet>
+        <sel>2</sel>
+        <set>NAVIGATE</set>
+        <pay>100</pay>
+    </NAVIGATOR>
+</persons>

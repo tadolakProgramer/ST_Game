@@ -1,0 +1,48 @@
+
+cargo.png
+size: 256,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+CargoFuel
+  rotate: false
+  xy: 110, 160
+  size: 106, 156
+  orig: 106, 156
+  offset: 0, 0
+  index: -1
+CargoGrafen
+  rotate: false
+  xy: 110, 2
+  size: 106, 156
+  orig: 106, 156
+  offset: 0, 0
+  index: -1
+CargoHM
+  rotate: false
+  xy: 110, 318
+  size: 106, 156
+  orig: 106, 156
+  offset: 0, 0
+  index: -1
+CargoTitan
+  rotate: false
+  xy: 2, 160
+  size: 106, 156
+  orig: 106, 156
+  offset: 0, 0
+  index: -1
+CargoWoter
+  rotate: false
+  xy: 2, 318
+  size: 106, 156
+  orig: 106, 156
+  offset: 0, 0
+  index: -1
+Empty
+  rotate: false
+  xy: 2, 2
+  size: 106, 156
+  orig: 106, 156
+  offset: 0, 0
+  index: -1

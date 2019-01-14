@@ -1,0 +1,24 @@
+<planets>
+    <planet1>
+        <name>Planet1</name>
+        <texture>planet_17.png</texture>
+        <posx>10</posx>
+        <posy>20</posy>
+        <rot>0</rot>
+        <Titan>111</Titan>
+        <Grafen>90.4</Grafen>
+        <Woter>30.8</Woter>
+        <Fuell>9</Fuell>
+    </planet1>
+    <planet2>
+        <name>Planet2</name>
+        <texture>planet_15.png</texture>
+        <posx>180</posx>
+        <posy>400</posy>
+        <rot>12</rot>
+        <Titan>100</Titan>
+        <Grafen>90</Grafen>
+        <Woter>30</Woter>
+        <Fuell>6</Fuell>
+    </planet2>
+</planets>
