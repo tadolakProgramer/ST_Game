@@ -62,9 +62,10 @@ public class SpaceShipScreen extends AbstractScreen {
         this.spaceShipPlayer = spaceShipPlayer;
         this.gameScreen = gameScreen;
         game.kolejka.addFirst(this);
-
+        initialize();
+    }
+    private void initialize(){
         DecimalFormat df = new DecimalFormat("#.##" + " kT");
-
         isVisible = true;
         skin = new Skin(Gdx.files.internal(FILE_EARTH_SKIN));
         skin2 = new Skin(Gdx.files.internal(FILE_UI_SKIN));
@@ -73,6 +74,12 @@ public class SpaceShipScreen extends AbstractScreen {
         createTableWithCargo();
         createTableCrows();
         creatTableButton();
+    }
+
+    public SpaceShipScreen(final MyGdxGame game, final SpaceShipPlayer spaceShipPlayer){
+        super(game);
+        this.spaceShipPlayer = spaceShipPlayer;
+        initialize();
     }
 
     private void initSpaceShipDraft() {
@@ -442,6 +449,7 @@ public class SpaceShipScreen extends AbstractScreen {
             intSpaceShipModuleActors(spaceShipPlayer);
             createTableWithCargo();
             createTableCrows();
+            creatTableButton();
         }
     }
 
