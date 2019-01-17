@@ -53,6 +53,7 @@ public class SpaceShipScreen extends AbstractScreen {
 
     private Window windowShipModuleInfo;
     private Table box;
+    private Table tableButton;
     private GameScreen gameScreen;
 
 
@@ -71,6 +72,7 @@ public class SpaceShipScreen extends AbstractScreen {
         intSpaceShipModuleActors(spaceShipPlayer);
         createTableWithCargo();
         createTableCrows();
+        creatTableButton();
     }
 
     private void initSpaceShipDraft() {
@@ -116,6 +118,25 @@ public class SpaceShipScreen extends AbstractScreen {
     @Override
     public void dispose(){
 
+    }
+
+    private void creatTableButton() {
+        tableButton = new Table();
+        tableButton.bottom().right().pad(10f);
+        tableButton.setFillParent(true);
+
+        TextButton textButton1 = new TextButton("Close", skin2);
+        textButton1.bottom().right().pad(10);
+        //textButton1.setScale(scale);
+        textButton1.addListener(new ClickListener() {
+                @Override
+                public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                    game.setScreen(gameScreen);
+                    return super.touchDown(event, x, y, pointer, button);
+                }
+            });
+        tableButton.add(textButton1).pad(10);
+        stage.addActor(tableButton);
     }
 
     private void createTableCrows() {
