@@ -12,7 +12,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.todal.game.Helper.MackeXML;
 import com.todal.game.MyGdxGame;
+
+import java.io.IOException;
+
+import static com.todal.game.MyGdxGame.getLoclaPath;
 
 public class CreatePlayerScreen extends AbstractScreen {
 
@@ -33,9 +38,8 @@ public class CreatePlayerScreen extends AbstractScreen {
     }
 
     private void init(){
-        //skin = new Skin(Gdx.files.internal("skin/flat-earth-ui.json"));
-        skin = new Skin(Gdx.files.internal("skin/flat-earth-ui.json"));
-        //skin = new Skin(Gdx.files.internal("skin/uiskin.json"));
+        skin = new Skin(Gdx.files.internal("data/skin/flat-earth-ui.json"));
+        //skin = new Skin(Gdx.files.internal("data/skin/uiskin.json"));
         createTablePlayer();
     }
 
@@ -48,11 +52,12 @@ public class CreatePlayerScreen extends AbstractScreen {
         tablePlayer.setFillParent(true);
 
         tablePlayer.row();
-        tablePlayer.add(new Label("Your Name Captein:", skin));
+        tablePlayer.add(new Label("Your Name Captein:", skin)).pad(10);
         TextField tfName = new TextField("Capitan Solo", skin);
+        playerName = tfName.getText();
         tablePlayer.add(tfName);
 
-        TextButton textButtonClose = new TextButton("Close", skin);
+        TextButton textButtonClose = new TextButton("Next", skin);
 
         /** Group Button**/
         tablePlayer.row();
@@ -74,14 +79,19 @@ public class CreatePlayerScreen extends AbstractScreen {
             @Override
             public void  touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 tablePlayer.remove();
+                try {
+                    String filePath = getLoclaPath();
+                    MackeXML.createDocument(filePath, playerName);
+                    MackeXML.createSpaceship(filePath);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 game.setScreen(new SpalshScreen(game));
 
             }
         });
 
         stage.addActor(tablePlayer);
-
-
     }
 
     @Override
